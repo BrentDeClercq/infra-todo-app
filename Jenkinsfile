@@ -7,9 +7,9 @@ node {
         }
     }
     stage('Build') {
-        sh 'bash ./build-todo.sh'
+        build 'BuildTodoApp'
     }
-    stage('Result') {
-        sh 'echo "hello"'
+    stage('Results') {
+        build 'TestTodoApp'
     }
 }
