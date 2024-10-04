@@ -7,7 +7,8 @@ node {
         }
     }
     stage('Build') {
-        sh 'docker build -t getting-started /app'
+        sh 'cd /app'
+        sh 'docker build -t getting-started .'
     }
     stage('Run') {
         sh 'docker run -dp 3000:3000 getting-started'
