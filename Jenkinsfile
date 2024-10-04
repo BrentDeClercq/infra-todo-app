@@ -7,7 +7,7 @@ node {
         }
     }
     stage('Build') {
-        sh 'cd /app'
+        sh 'cd app'
         sh 'docker build -t getting-started .'
     }
     stage('Run') {
