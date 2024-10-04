@@ -7,12 +7,12 @@ node {
         }
     }
     stage('Build') {
-        catchError(buildResult: 'SUCCESS') {
-            sh 'docker build -t getting-started ./app'
+        catchError(buildResult: 'FAILED') {
+            sh 'docker build -t getting-started /app'
         }
     }
     stage('Run') {
-        catchError(buildResult: 'SUCCESS') {
+        catchError(buildResult: 'FAILED') {
             sh 'docker run -dp 3000:3000 getting-started'
         }
     }
